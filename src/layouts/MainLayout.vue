@@ -5,7 +5,7 @@
       <q-toolbar>
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
 
-        <q-toolbar-title>
+        <q-toolbar-title class="text-bold">
           Products
         </q-toolbar-title>
 
@@ -26,7 +26,7 @@
           </q-input>
         </div>
 
-        <q-btn dense flat round icon="menu" @click="toggleRightDrawer" />
+        <q-btn dense flat round icon="shopping_cart" @click="toggleRightDrawer" />
       </q-toolbar>
     </q-header>
 

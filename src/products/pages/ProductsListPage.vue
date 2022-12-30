@@ -1,4 +1,7 @@
 <template>
+
+  <MenuProducts />
+
   <div class="q-pa-sm">
     <div class="row justify-center q-gutter-sm">
       <q-intersection
@@ -20,6 +23,8 @@
 </template>
 
 <script setup lang="ts">
+import MenuProducts from '../components/MenuProducts.vue'
+
 
 </script>
 
