@@ -1,8 +1,5 @@
 <template>
-
-  <MenuProducts />
-
-  <div class="q-pa-sm">
+  <q-page padding style="padding-top: 66px">
     <div class="row justify-center q-gutter-sm">
       <q-intersection
         v-for="index in 30"
@@ -19,7 +16,8 @@
         </q-card>
       </q-intersection>
     </div>
-  </div>
+    <MenuProducts />
+  </q-page>
 </template>
 
 <script setup lang="ts">
