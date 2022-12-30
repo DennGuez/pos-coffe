@@ -1,16 +1,30 @@
 <template>
   <q-layout view="lHr LpR fFf">
 
-    <q-header bordered class="bg-primary text-white">
+    <q-header class="bg-secondary text-primary">
       <q-toolbar>
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
 
         <q-toolbar-title>
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
-          </q-avatar>
           Products
         </q-toolbar-title>
+
+        <div class="" style="width: 500px">
+          <q-input
+            class="on-left"
+            type="search"
+            item-aligned
+            filled
+            v-model="text"
+            label="Buscar Producto"
+            dense
+            bg-color="white">
+              <template v-slot:append>
+                <q-icon v-if="text !== ''" name="close" @click="text = ''" class="cursor-pointer" />
+                <q-icon name="search" />
+              </template>
+          </q-input>
+        </div>
 
         <q-btn dense flat round icon="menu" @click="toggleRightDrawer" />
       </q-toolbar>
@@ -22,7 +36,7 @@
 
     <OrdersDetailsPage :isOpen="rightDrawerOpen"/>
 
-    <q-page-container>
+    <q-page-container class="bg-secondary" >
       <router-view />
     </q-page-container>
 

@@ -45,7 +45,7 @@
             <span class="text-h6 text-primary text-bold" >Bs 740.00</span>
         </div>
         <q-separator spaced inset vertical dark />
-        <q-btn color="primary" label="Pagar Ahora" />
+        <q-btn size="lg" color="primary" label="Pagar Ahora" />
     </div>
   </q-drawer>
 </template>
