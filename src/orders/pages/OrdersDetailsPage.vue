@@ -7,28 +7,32 @@
     side="right"
     bordered
 >
-    <span class="text-h6 text-bold q-px-md">Detalles de compra</span>
+    <!-- <span class="text-h6 text-bold q-px-md fixed">Detalles de compra</span> -->
+    <div class="q-pa-md" style="max-width: 350px">
+    
+    <q-toolbar class="bg-primary text-white shadow-2">
+      <q-toolbar-title>Detalles de compra</q-toolbar-title>
+    </q-toolbar>
     <q-separator class="q-my-sm"/>
-    <q-scroll-area style="height: 70%; max-width: 100%;">
-        <q-list separator> 
-        <q-item v-for="val in 20" :key="val" clickable v-ripple>
-            <q-item-section avatar>
-                <q-avatar size="70px" rounded>
-                    <img src="https://cdn.quasar.dev/img/mountains.jpg">
-                </q-avatar>
-            </q-item-section>
+        <q-list separator style="height: 500px"> 
+            <q-item v-for="val in 20" :key="val" clickable v-ripple>
+                <q-item-section avatar>
+                    <q-avatar size="70px" rounded>
+                        <img src="https://cdn.quasar.dev/img/mountains.jpg">
+                    </q-avatar>
+                </q-item-section>
 
-            <q-item-section>
-            <q-item-label class="text-weight-bold">Caffé Napolitano</q-item-label>
-            <q-separator spaced inset vertical dark />
-            <div class="row justify-between">
-                    <span class="text-body2 text-grey-7" >2x</span>
-                    <span class="text-subtitle2 text-primary text-bold" >Bs 23.00</span>
-            </div>
-            </q-item-section>
-        </q-item>
+                <q-item-section>
+                <q-item-label class="text-weight-bold">Caffé Napolitano</q-item-label>
+                <q-separator spaced inset vertical dark />
+                <div class="row justify-between">
+                        <span class="text-body2 text-grey-7" >2x</span>
+                        <span class="text-subtitle2 text-primary text-bold" >Bs 23.00</span>
+                </div>
+                </q-item-section>
+            </q-item>
         </q-list>
-    </q-scroll-area>
+    </div>
     
     <div class="column fixed-bottom q-pa-md">
         <div class="row justify-between">
