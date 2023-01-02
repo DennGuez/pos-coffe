@@ -18,7 +18,6 @@
     </div>
     <MenuProducts />
   </q-page>
-  <span>TEST GIT</span>
 </template>
 
 <script setup lang="ts">
