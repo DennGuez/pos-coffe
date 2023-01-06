@@ -1,6 +1,9 @@
 # POS App (pos-coffe)
 
-A Quasar Project
+POS (Point of Sale) for a coffe shop
+with Supabase as backend
+
+You need add supabase credentials at `.env`
 
 ## Install the dependencies
 ```bash
