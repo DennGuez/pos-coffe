@@ -1,19 +1,11 @@
 <template>
-  <q-page padding style="padding-top: 66px">
-    <div class="row justify-center q-gutter-sm">
+  <q-page padding style="padding-top: 70px">
+    <div class="row justify-center">
       <q-intersection
-        v-for="index in 30"
-        :key="index"
-        class="example-item"
+        v-for="product in productsQuery.data.value"
+        :key="product.id"
       >
-        <q-card flat class="q-ma-sm">
-          <img src="https://cdn.quasar.dev/img/mountains.jpg">
-
-          <q-card-section>
-            <div class="text-h6">Card #{{ index }}</div>
-            <div class="text-subtitle2">by John Doe</div>
-          </q-card-section>
-        </q-card>
+        <ProductCard :product="product"/>
       </q-intersection>
     </div>
     <MenuProducts />
@@ -22,12 +14,16 @@
 
 <script setup lang="ts">
 import MenuProducts from '../components/MenuProducts.vue'
+import useProducts from 'src/products/composables/useProducts'
+import ProductCard from 'src/products/components/ProductCard.vue'
+
+const { productsQuery } = useProducts()
 
 
 </script>
 
 <style lang="sass" scoped>
-.example-item
-  height: 250px
-  width: 250px
+.my-card
+  width: 100%
+  max-width: 250px
 </style>

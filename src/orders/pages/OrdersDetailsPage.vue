@@ -18,8 +18,8 @@
             </q-toolbar>
         </q-item>
 
-        <!-- 56 + 210 = 256 -->
-        <q-scroll-area style="height: calc(100% - 266px); margin-top: 56px; margin-bottom: 210px;" >
+        <!-- 56 + 220 = 276 -->
+        <q-scroll-area style="height: calc(100% - 276px); margin-top: 56px; margin-bottom: 210px;" >
             <q-list separator> 
                 <q-item v-for="val in 20" :key="val" clickable v-ripple>
                     <q-item-section avatar>
@@ -39,7 +39,7 @@
             </q-list>
         </q-scroll-area>
 
-        <q-item class="absolute-bottom column" style="height: 210px">
+        <q-item class="absolute-bottom column q-py-md" style="height: 220px">
             <div class="row justify-between">
                 <span class="text-subtitle1 text-grey-7" >Subtotal</span>
                 <span class="text-subtitle1  text-primary text-bold" >Bs 742.00</span>

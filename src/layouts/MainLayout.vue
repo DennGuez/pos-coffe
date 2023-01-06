@@ -2,16 +2,14 @@
   <q-layout view="lHr LpR fFf">
 
     <q-header class="bg-secondary text-primary">
-    <!-- <div class="row"> -->
       <q-toolbar class="row">
         <div class="row col items-center q-pr-md">
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
-          <q-toolbar-title class="text-bold" >
+          <q-toolbar-title class="text-bold" style="overflow: visible;">
             Products
           </q-toolbar-title>
         </div>
         <div class="col-6">
-          <div style="width: 100%;">
               <q-input
                 type="search"
                 filled
@@ -21,23 +19,22 @@
                 bg-color="white">
                   <template v-slot:append>
                     <q-btn
-                      style="width: 90px;"
-                      no-caps=""
                       :loading="false"
-                      size="md"
-                      dense
+                      @click="onClick" 
                       color="primary"
+                      dense
                       label="Buscar"
-                      @click="onClick" />
+                      no-caps=""
+                      size="md"
+                      style="width: 90px;"
+                      unelevated />
                   </template>
               </q-input>
           </div>
-        </div>
         <div class="q-pl-md col row justify-end">
           <q-btn dense flat round icon="shopping_cart" @click="toggleRightDrawer" />
         </div>
       </q-toolbar>
-    <!-- </div> -->
     </q-header>
 
     <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered>
