@@ -2,32 +2,42 @@
   <q-layout view="lHr LpR fFf">
 
     <q-header class="bg-secondary text-primary">
-      <q-toolbar>
+    <!-- <div class="row"> -->
+      <q-toolbar class="row">
+        <div class="row col items-center q-pr-md">
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
-
-        <q-toolbar-title class="text-bold">
-          Products
-        </q-toolbar-title>
-
-        <div class="" style="width: 500px">
-          <q-input
-            class="on-left"
-            type="search"
-            item-aligned
-            filled
-            v-model="text"
-            label="Buscar Producto"
-            dense
-            bg-color="white">
-              <template v-slot:append>
-                <q-icon v-if="text !== ''" name="close" @click="text = ''" class="cursor-pointer" />
-                <q-icon name="search" />
-              </template>
-          </q-input>
+          <q-toolbar-title class="text-bold" >
+            Products
+          </q-toolbar-title>
         </div>
-
-        <q-btn dense flat round icon="shopping_cart" @click="toggleRightDrawer" />
+        <div class="col-6">
+          <div style="width: 100%;">
+              <q-input
+                type="search"
+                filled
+                v-model="text"
+                label="Buscar Producto"
+                dense
+                bg-color="white">
+                  <template v-slot:append>
+                    <q-btn
+                      style="width: 90px;"
+                      no-caps=""
+                      :loading="false"
+                      size="md"
+                      dense
+                      color="primary"
+                      label="Buscar"
+                      @click="onClick" />
+                  </template>
+              </q-input>
+          </div>
+        </div>
+        <div class="q-pl-md col row justify-end">
+          <q-btn dense flat round icon="shopping_cart" @click="toggleRightDrawer" />
+        </div>
       </q-toolbar>
+    <!-- </div> -->
     </q-header>
 
     <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered>
