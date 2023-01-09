@@ -20,7 +20,7 @@
                   <template v-slot:append>
                     <q-btn
                       :loading="false"
-                      @click="onClick" 
+                      @click="() => onClick" 
                       color="primary"
                       dense
                       label="Buscar"
@@ -58,7 +58,9 @@ export default {
     setup() {
         const leftDrawerOpen = ref(false);
         const rightDrawerOpen = ref(false);
+        const text = ref('');
         return {
+            text,
             leftDrawerOpen,
             toggleLeftDrawer() {
                 leftDrawerOpen.value = !leftDrawerOpen.value;
@@ -72,3 +74,8 @@ export default {
     components: { OrdersDetailsPage }
 }
 </script>
+
+<style lang="sass" scoped>
+.scroll
+  overflow: hidden
+</style>

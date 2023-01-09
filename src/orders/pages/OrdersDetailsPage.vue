@@ -5,14 +5,15 @@
     side="right"
     bordered
 >   
-    <template v-if="data">
+    <template v-if="orders.length === 0">
       <div class="column justify-center items-center full-height"> 
          <q-icon name="shopping_cart" size="100px" color="secondary"/>
          <span class="text-subtitle1"> No hay ningun producto en el carro.</span>
       </div>
     </template>
+
     <template v-else>
-        <q-item class="red absolute-top no-padding" style="height: 56px">
+        <q-item class="absolute-top no-padding" style="height: 56px">
             <q-toolbar class="bg-secondary text-black fit">
                 <q-toolbar-title class="text-bold">Detalles de compra</q-toolbar-title>
             </q-toolbar>
@@ -21,21 +22,7 @@
         <!-- 56 + 220 = 276 -->
         <q-scroll-area style="height: calc(100% - 276px); margin-top: 56px; margin-bottom: 210px;" >
             <q-list separator> 
-                <q-item v-for="val in 20" :key="val" clickable v-ripple>
-                    <q-item-section avatar>
-                        <q-avatar size="70px" rounded>
-                            <img src="https://cdn.quasar.dev/img/mountains.jpg">
-                        </q-avatar>
-                    </q-item-section>
-
-                    <q-item-section class="column justify-around">
-                        <q-item-label class="text-weight-bold">Caffé Napolitano</q-item-label>
-                        <div class="row justify-between">
-                            <span class="text-body2 text-grey-7">2x</span>
-                            <span class="text-subtitle2 text-primary text-bold" >Bs 23.00</span>
-                        </div>
-                    </q-item-section>
-                </q-item>
+                <OrderCard />
             </q-list>
         </q-scroll-area>
 
@@ -51,7 +38,7 @@
             <q-separator spaced="lg" />
             <div class="row justify-between">
                 <span class="text-h6 text-grey-7 text-bold" >Total</span>
-                <span class="text-h6 text-primary text-bold" >Bs 740.00</span>
+                <span class="text-h6 text-primary text-bold" >Bs 383.00</span>
             </div>
             <q-separator spaced inset vertical dark />
             <q-btn size="lg" color="primary" label="Pagar Ahora" />
@@ -61,12 +48,15 @@
 </template>
 
 <script setup lang="ts">
-import { toRef, ref } from 'vue'
+import { toRef } from 'vue'
+import OrderCard from 'src/orders/components/OrderCard.vue'
+import useOrders from '../composables/useOrders'
 
-const props = defineProps<{isOpen: boolean}>()
+const props = defineProps<{ isOpen: boolean }>()
 const isOpen = toRef(props, 'isOpen')
-const data = ref(false)
 
+const { orders } = useOrders()
+console.log( orders )
 </script>
 
 <style lang="sass" scoped>
