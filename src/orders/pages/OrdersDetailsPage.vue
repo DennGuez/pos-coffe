@@ -22,7 +22,11 @@
         <!-- 56 + 220 = 276 -->
         <q-scroll-area style="height: calc(100% - 276px); margin-top: 56px; margin-bottom: 210px;" >
             <q-list separator> 
-                <OrderCard />
+                <OrderCard
+                  v-for="product in orders"
+                  :key="product.id" 
+                  :product="product"
+                />
             </q-list>
         </q-scroll-area>
 
@@ -56,7 +60,6 @@ const props = defineProps<{ isOpen: boolean }>()
 const isOpen = toRef(props, 'isOpen')
 
 const { orders } = useOrders()
-console.log( orders )
 </script>
 
 <style lang="sass" scoped>

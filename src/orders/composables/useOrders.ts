@@ -16,11 +16,11 @@ const useOrders = () => {
       addProductToCar( product: Product ) {
          orderStore.addOrder( product )
       }, 
-      removeProductFromCar( product: Product ) {
-         orderStore.removeOrder( product )
+      removeProductFromCar( id: string ) {
+         orderStore.removeOrder( id )
       },
-      increaseProductFromCar( product: Product ) {
-         orderStore.increaseOrder( product )
+      increaseProductFromCar( id: string ) {
+         orderStore.increaseOrder( id )
       }
 
       // computed
